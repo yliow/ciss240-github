@@ -2,7 +2,8 @@
 
 int main()
 {
-    std::cout << "hello world\n";
-    
+    int x = 'a';
+    std::cout << x << '\n';
+
     return 0;
 }
