@@ -5,7 +5,7 @@
 int main()
 {
     srand(4);
-    const int n = 1000;
+    const int n = 100000;
     int x[n];
 
     for (int i = 0; i < n; ++i)
@@ -43,12 +43,12 @@ int main()
     // }
     // std::cout << '\n';
 
-    for (int test = 0; test < 20; ++test)
+    for (int test = 0; test < 1000000; ++test)
     {
         int target = rand() % n;
         // std::cout << target << '\n';
         
-        // linear search
+        // //linear search
         // int index = -1;
         // for (int i = 0; i < n; ++i)
         // {
