@@ -14,7 +14,7 @@ int main()
     int min_tot_dist = 10000;
     int best_addr;
 
-    for (int i = 0; i < n, ++i)
+    for (int i = 0; i < n; ++i)
     {
         // compute total dist walking to addr[i]
         int tot_dist = 0;
@@ -37,6 +37,7 @@ int main()
             }
         }
     }
+    std::cout << "best_addr:" << best_addr << '\n';
     
     return 0;
 }
