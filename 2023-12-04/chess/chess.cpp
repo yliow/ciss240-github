@@ -34,15 +34,17 @@ void init_board(char chessboard[8][8])
 
 void print_board(char chessboard[8][8])
 {
-    std::cout << "+-+-+-+-+-+-+-+-+\n";
+    std::cout << "  A B C D E F G H\n";
+    std::cout << " +-+-+-+-+-+-+-+-+\n";
     for (int r = 0; r < 8; ++r)
     {
-        std::cout << '|';
+        std::cout << (r + 1) << '|';
         for (int c = 0; c < 8; ++c)
         {
             std::cout << chessboard[r][c] << '|';
         }
-        std::cout << '\n';
-        std::cout << "+-+-+-+-+-+-+-+-+\n";
+        std::cout << (r + 1) << '\n';
+        std::cout << " +-+-+-+-+-+-+-+-+\n";
     }
+    std::cout << "  A B C D E F G H\n";
 }
