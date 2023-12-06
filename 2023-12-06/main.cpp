@@ -2,6 +2,7 @@
 
 const int NROWS = 10;
 const int NCOLS = 10;
+const int NALIENS = 3;
 
 void clear(char s[NROWS][NCOLS])
 {
@@ -43,8 +44,10 @@ int main()
 {
     char s[NROWS][NCOLS];
     int spaceship_r = NROWS - 1, spaceship_c = NCOLS / 2;
-    int alien_r = 1, alien_c = NCOLS / 2, alien_isalive = true;
-    int alien_dc = -1;
+    int alien_r[NALIENS] = {1, 2, 3};
+    int alien_c[NALIENS] = {NCOLS / 2, 1, 2};
+    int alien_isalive[NALIENS] = {true, true, true};
+    int alien_dc[NALIENS] = {-1, 1, 1};
     int laser_r = 0, laser_c = 0, laser_isalive = false;
     int score = 0;
     while (1)
@@ -52,20 +55,23 @@ int main()
         clear(s);
         s[spaceship_r][spaceship_c] = 'A';
         s[0][0] = score + '0';
-        if (alien_isalive)
+        for (int i = 0; i < NALIENS; ++i)
         {
-            alien_c += alien_dc;
-            if (alien_c < 0)
+            if (alien_isalive[i])
             {
-                alien_c = 0;
-                alien_dc = -alien_dc;
+                alien_c[i] += alien_dc[i];
+                if (alien_c[i] < 0)
+                {
+                    alien_c[i] = 0;
+                    alien_dc[i] = -alien_dc[i];
+                }
+                else if (alien_c[i] >= NCOLS)
+                {
+                    alien_c[i] = NCOLS - 1;
+                    alien_dc[i] = -alien_dc[i];
+                }            
+                s[alien_r[i]][alien_c[i]] = 'V';
             }
-            else if (alien_c >= NCOLS)
-            {
-                alien_c = NCOLS - 1;
-                alien_dc = -alien_dc;
-            }            
-            s[alien_r][alien_c] = 'V';
         }
         if (laser_isalive)
         {
@@ -80,10 +86,16 @@ int main()
             {
                 laser_isalive = false;
             }
-            if (laser_r == alien_r && laser_c == alien_c)
+            for (int i = 0; i < NALIENS; ++i)
             {
-                alien_isalive = false;
-                ++score;
+                if (alien_isalive[i]
+                    && laser_r == alien_r[i]
+                    && laser_c == alien_c[i])
+                {
+                    alien_isalive[i] = false;
+                    laser_isalive = false;
+                    ++score;
+                }
             }
         }
         std::cout << "l-left r-right f-fire n-no input q-quit: ";
