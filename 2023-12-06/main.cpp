@@ -44,30 +44,51 @@ int main()
     char s[NROWS][NCOLS];
     int spaceship_r = NROWS - 1, spaceship_c = NCOLS / 2;
     int alien_r = 1, alien_c = NCOLS / 2;
-
+    int laser_r = 0, laser_c = 0, laser_isalive = false;
     while (1)
     {
         clear(s);
         s[spaceship_r][spaceship_c] = 'A';
         s[alien_r][alien_c] = 'V';
+        if (laser_isalive)
+        {
+            s[laser_r][laser_c] = '|';
+        }
         draw(s);
-        std::cout << "l-left r-right f-fire n-no input: ";
+
+        if (laser_isalive)
+        {
+            --laser_r;
+        }
+        std::cout << "l-left r-right f-fire n-no input q-quit: ";
         char input;
         std::cin >> input;
         switch (input)
         {
             case 'l':
-                --spaceship_c;
+                if (spaceship_c > 0)
+                {
+                    --spaceship_c;
+                }
                 break;
             case 'r':
-                ++spaceship_c;
+                if (spaceship_c < NCOLS - 1)
+                {
+                    ++spaceship_c;
+                }
                 break;
             case 'f':
+                if (!laser_isalive)
+                {
+                    laser_isalive = true;
+                    laser_r = spaceship_r - 1;
+                    laser_c = spaceship_c;
+                }
                 break;
             case 'n':
                 break;
         }
-                
+        if (input == 'q') break;
     }
     return 0;
 }
