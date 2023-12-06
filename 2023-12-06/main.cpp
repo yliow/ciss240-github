@@ -44,11 +44,30 @@ int main()
     char s[NROWS][NCOLS];
     int spaceship_r = NROWS - 1, spaceship_c = NCOLS / 2;
     int alien_r = 1, alien_c = NCOLS / 2;
-   
-    clear(s);
-    s[spaceship_r][spaceship_c] = 'A';
-    s[alien_r][alien_c] = 'V';
-    draw(s);
-    
+
+    while (1)
+    {
+        clear(s);
+        s[spaceship_r][spaceship_c] = 'A';
+        s[alien_r][alien_c] = 'V';
+        draw(s);
+        std::cout << "l-left r-right f-fire n-no input: ";
+        char input;
+        std::cin >> input;
+        switch (input)
+        {
+            case 'l':
+                --spaceship_c;
+                break;
+            case 'r':
+                ++spaceship_c;
+                break;
+            case 'f':
+                break;
+            case 'n':
+                break;
+        }
+                
+    }
     return 0;
 }
