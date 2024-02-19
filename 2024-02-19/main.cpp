@@ -48,34 +48,34 @@ int main()
     {
         t = x0; x0 = x1; x1 = t;
     }
-    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' x3 << '\n';
+    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
     if (x1 > x2)
     {
         t = x1; x1 = x2; x2 = t;
     }
-    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' x3 << '\n';
+    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
     if (x2 > x3)
     {
         t = x2; x2 = x3; x3 = t;
     }
-    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' x3 << '\n';
+    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
     // Pass 2
     if (x0 > x1)
     {
         t = x0; x0 = x1; x1 = t;
     }
-    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' x3 << '\n';
+    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
     if (x1 > x2)
     {
         t = x1; x1 = x2; x2 = t;
     }
-    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' x3 << '\n';
+    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
     // Pass 3
     if (x0 > x1)
     {
         t = x0; x0 = x1; x1 = t;
     }
-    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' x3 << '\n';
+    std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
     
     return 0;
 }
