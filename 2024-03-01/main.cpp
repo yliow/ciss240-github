@@ -46,6 +46,33 @@ int main()
     //     std::cout << i << ' ' << p << '\n';
     // }
     // std::cout << p << '\n';
+
+    // 2 to the power of n
+    // example: n = 3
+    //          compute 2 to the 3
+    //          2 * 2 * 2
+    // example: n = 5
+    //          compute 2 * 2 * 2 * 2 * 2
+    // int n;
+    // std::cin >> n;
+    // int p = 1;
+    // for (int i = 1; i <= n; ++i)
+    // {
+    //     p *= 2;
+    //     //std::cout << i << ' ' << p << '\n';
+    // }
+    // std::cout << p << '\n';
+
+    double x;
+    int n;
+    std::cin >> x >> n;
+    double p = 1.0;
+    for (int i = 0; i < n; ++i)
+    {
+        p *= x;
+        // std::cout << i << ' ' << p << '\n';
+    }
+    std::cout << p << '\n';
     
     return 0;
 }
