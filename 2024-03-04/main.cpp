@@ -19,7 +19,7 @@ int main()
         {
             min = x;
         }
-        std::cout << x << ' ' << min << '\n';
+        std::cout << i << ' ' << x << ' ' << min << '\n';
     }
     std::cout << min << '\n';
     
