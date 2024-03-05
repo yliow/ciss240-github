@@ -2,26 +2,42 @@
 
 int main()
 {
-    int n; // number of values to minimize 
-    std::cin >> n;
+    // do max yourself
+    // int n; // number of values to minimize 
+    // std::cin >> n;
 
-    int x;
-    int min;
+    // int x;
+    // int min;
     
-    std::cin >> x;
-    min = x;
-    std::cout << x << ' ' << min << '\n';
+    // std::cin >> x;
+    // min = x;
+    // std::cout << x << ' ' << min << '\n';
 
-    for (int i = 0; i < n - 1; ++i)
+    // for (int i = 0; i < n - 1; ++i)
+    // {
+    //     std::cin >> x;
+    //     if (x < min)
+    //     {
+    //         min = x;
+    //     }
+    //     std::cout << i << ' ' << x << ' ' << min << '\n';
+    // }
+    // std::cout << min << '\n';
+
+    // generating equally spaced points
+    double a, b;
+    int n;
+    std::cin >> a >> b >> n;
+
+    double x = a;
+    double dx = (b - a) / (n - 1);
+    for (int i = 0; i < n; ++i)
     {
-        std::cin >> x;
-        if (x < min)
-        {
-            min = x;
-        }
-        std::cout << i << ' ' << x << ' ' << min << '\n';
+        std::cout << x << '\n';
+
+        // for next iteration
+        x += dx;
     }
-    std::cout << min << '\n';
     
     return 0;
 }
