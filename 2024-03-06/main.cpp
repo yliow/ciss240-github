@@ -30,30 +30,38 @@ int main()
     // }
     // std::cout << min_x << ' ' << min_y << '\n';
 
-    double a, b;
-    int n;
-    std::cin >> a >> b >> n;
-
-    double max_x;
-    double max_y;
-
-    max_y = a * sin(a);
-    max_x = a;
-    std::cout << a << ' ' << a * sin(a) << ' '
-              << max_x << ' ' << max_y << '\n';
-    double dx = (b - a) / (n - 1);
-    for (double x = a + dx; x <= b; x += dx)
-    {
-        double y = x * sin(x);
-        if (y > max_y)
-        {
-            max_y = y;
-            max_x = x;
-        }
-        std::cout << x << ' ' << x * sin(x) << ' '
-                  << max_x << ' ' << max_y << '\n';
-    }
-    std::cout << max_x << ' ' << max_y << '\n';
     
+    // double a, b;
+    // int n;
+    // std::cin >> a >> b >> n;
+
+    // double max_x;
+    // double max_y;
+
+    // max_y = a * sin(a);
+    // max_x = a;
+    // std::cout << a << ' ' << a * sin(a) << ' '
+    //           << max_x << ' ' << max_y << '\n';
+    // double dx = (b - a) / (n - 1);
+    // for (double x = a + dx; x <= b; x += dx)
+    // {
+    //     double y = x * sin(x);
+    //     if (y > max_y)
+    //     {
+    //         max_y = y;
+    //         max_x = x;
+    //     }
+    //     std::cout << x << ' ' << x * sin(x) << ' '
+    //               << max_x << ' ' << max_y << '\n';
+    // }
+    // std::cout << max_x << ' ' << max_y << '\n';
+
+    int i = 0;
+    for (;;)
+    {
+        std::cout << i << '\n';
+        ++i;
+    }
+    std::cout << "outside ... " << i << '\n';
     return 0;
 }
