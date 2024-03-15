@@ -11,6 +11,10 @@ int main()
     {
         std::cout << "units: ";
         std::cin >> num;
+        if (num == 0)
+        {
+            break;
+        }
 
         std::cout << "unit price: ";
         std::cin >> price;
