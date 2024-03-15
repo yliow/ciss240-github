@@ -1,5 +1,25 @@
 #include <iostream>
 
+int numdigits(int n)
+{
+    int num = 0; // number of digits in n
+
+    if (n == 0)
+    {
+        num = 1;
+    }
+    else
+    {
+        while (n > 0)
+        {
+            n /= 10;
+            ++num;
+        }
+    }
+    
+    return num;
+}
+
 int main()
 {
     // POS system
@@ -32,14 +52,6 @@ int main()
     // digit counting
     int n;
     std::cin >> n;
-    int numdigits = 0;
-
-    while (n > 0)
-    {
-        n /= 10;
-        ++numdigits;
-        std::cout << n << ' ' << numdigits << '\n';
-    }
     std::cout << "final numdigits: " << numdigits << '\n';
     
     return 0;
