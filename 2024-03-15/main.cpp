@@ -52,7 +52,7 @@ int main()
     // digit counting
     int n;
     std::cin >> n;
-    std::cout << "final numdigits: " << numdigits << '\n';
+    std::cout << "final numdigits: " << numdigits(n) << '\n';
     
     return 0;
 }
