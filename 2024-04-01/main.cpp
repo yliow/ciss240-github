@@ -30,7 +30,7 @@ int linearsearch(int w[], int target)
     int index = -1;
     for (int i = 0; i < 10; ++i)
     {
-        if (x[i] == target)
+        if (w[i] == target)
         {
             index = i;
             break;
