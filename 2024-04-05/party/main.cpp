@@ -37,6 +37,7 @@ int main()
                 min_i = i;
             }
         }
+        //std::cout << i << ' ' << addr[i] << ' ' << d << ' ' << min_d << ' ' << min_i << '\n';
     }
     std::cout << min_i << '\n';
     return 0;
