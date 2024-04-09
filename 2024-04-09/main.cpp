@@ -25,7 +25,7 @@ int main()
 
     for (int n = 0; n < 4; ++n)
     {
-        std::cout << n << ' ' << sum(n) << '\n'
+        std::cout << n << ' ' << sum(n) << '\n';
     }
     return 0;
 }
@@ -40,6 +40,7 @@ int sum(int n)
     }
     return s;
 }
+
 
 int sign(double x)
 {
