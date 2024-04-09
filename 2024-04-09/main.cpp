@@ -58,6 +58,7 @@ int sign(double x)
     }
 }
 
+
 double reciprocal(double y)
 {
     return 1.0 / y;
