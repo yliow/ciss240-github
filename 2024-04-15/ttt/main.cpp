@@ -3,6 +3,7 @@
 const int n = 3;
 
 void init_board(char board[n][n]);
+void print_board(char board[n][n]);
 
 
 int main()
@@ -13,6 +14,13 @@ int main()
     board[0][1] = 'X';
     board[1][2] = '?';
 
+ 
+    
+    return 0;
+}
+
+void print_board(char board[n][n])
+{
     // print dividing line
     std::cout << '+';
     for (int col = 0; col < n; ++col)
@@ -39,11 +47,8 @@ int main()
         }
         std::cout << '\n';
     }
-
-    
-    return 0;
+    return;
 }
-
 
 
 void init_board(char board[n][n])
