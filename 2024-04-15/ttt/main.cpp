@@ -2,17 +2,14 @@
 
 const int n = 3;
 
+void init_board(char board[n][n]);
+
+
 int main()
 {
     char board[n][n];
-    for (int row = 0; row < n; ++row)
-    {
-        for (int col = 0; col < n; ++col)
-        {
-            board[row][col] = ' ';
-        }
-    }
-
+    init_board(board);
+    
     board[0][1] = 'X';
     board[1][2] = '?';
 
@@ -45,4 +42,18 @@ int main()
 
     
     return 0;
+}
+
+
+
+void init_board(char board[n][n])
+{
+    for (int row = 0; row < n; ++row)
+    {
+        for (int col = 0; col < n; ++col)
+        {
+            board[row][col] = ' ';
+        }
+    }
+    return;
 }
