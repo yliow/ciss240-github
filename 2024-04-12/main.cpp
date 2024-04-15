@@ -42,9 +42,16 @@ int main()
 
     int w[3][4];
     w[1][2] = 42;
-    std::cout << w[i][2] << '\n';
+    std::cout << w[1][2] << '\n';
 
-
+    for (int row = 0; row < 3; ++row)
+    {
+        for (int col = 0; col < 4; ++col)
+        {
+            std::cout << w[row][col] << ' ';
+        }
+        std::cout << '\n';
+    }
 
     
     return 0;
