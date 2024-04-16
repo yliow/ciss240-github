@@ -13,8 +13,6 @@ int main()
 {
     char board[n][n];
     init_board(board);
-    board[0][1] = 'X';
-    board[1][2] = '?';
 
     char turn = 'X';
     while (1)
@@ -115,7 +113,7 @@ bool is_winning_row(char board[n][n], int row, char piece)
             break;
         }
     }
-    if (win) return true;
+    return win;
 }
 
 bool is_winning_col(char board[n][n], int col, char piece)
@@ -129,17 +127,41 @@ bool is_winning_col(char board[n][n], int col, char piece)
             break;
         }
     }
-    if (win) return true;
+    return win;    
 }
+
 bool is_winning_move(char board[n][n], int row, int col)
 {
     char piece = board[row][col]; // the piece that the player just put down
 
     bool win = is_winning_row(board, row, piece);
+    if (win) return true;
     
-    // check if column col is a winning col
+    win = is_winning_col(board, row, piece);
+    if (win) return true;
+        
+    // check if forward diag is winning diag
+    win = true;
+    if (row + col == n - 1)
+    {
+        for (int r = 0; r < n; ++r)
+        {
+            int c = -r + (n - 1);
+            if (board[r][c] != piece)
+            {
+                win = false;
+                break;
+            }
+        }
+    }
+    else
+    {
+        win = false;
+    }
+
+    if (win) return true;
     
-    // check if forward diag is winning diag    
     // check if reverse diag is winning diag    
 
+    return false;
 }
