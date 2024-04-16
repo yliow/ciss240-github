@@ -16,8 +16,7 @@ int main()
 
     char turn = 'X';
     while (1)
-    {
-        
+    {        
         // Get move from player. (note: keep asking for row, col until it's valid.)
         int row, col;
         get_move(board, turn, row, col);
@@ -30,6 +29,8 @@ int main()
         // 2. it's a draw ... every empty square has been taken
         if (is_winning_move(board, row, col))
         {
+            print_board(board);
+            std::cout << turn << " wins\n";
             break;
         }
         
@@ -158,7 +159,6 @@ bool is_winning_move(char board[n][n], int row, int col)
     {
         win = false;
     }
-
     if (win) return true;
     
     // check if reverse diag is winning diag    
