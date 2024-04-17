@@ -85,6 +85,13 @@ int main()
                 --ship_col;
             }
         }
+        else if (input == 'r')
+        {
+            if (ship_col < n)
+            {
+                ++ship_col;
+            }
+        }
     }
     
     return 0;
