@@ -90,6 +90,11 @@ void clear(char surface[n][n])
 
 void draw(char surface[n][n])
 {
+    for (int c = 0; c < n; ++c)
+    {
+        std::cout << '-';
+    }
+    std::cout << '\n';
     for (int r = 0; r < n; ++r)
     {
         std::cout << '|';
