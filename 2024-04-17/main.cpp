@@ -80,7 +80,10 @@ int main()
         std::cin >> input;
         if (input == 'l')
         {
-            --ship_col;
+            if (ship_col > 0)
+            {
+                --ship_col;
+            }
         }
     }
     
