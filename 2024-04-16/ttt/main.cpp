@@ -8,7 +8,7 @@ void get_move(char board[n][n], char turn, int & row, int & col);
 bool is_winning_move(char board[n][n], int row, int col);
 bool is_winning_row(char board[n][n], int row, char piece);
 bool is_winning_col(char board[n][n], int col, char piece);
-
+bool is_winning_diag(char board[n][n], int row, int col);
 
 int main()
 {
@@ -165,11 +165,16 @@ bool is_winning_move(char board[n][n], int row, int col)
     bool win = is_winning_row(board, row, piece);
     if (win) return true;
     
-    win = is_winning_col(board, row, piece);
+    win = is_winning_col(board, col, piece);
     if (win) return true;
 
     win = is_winning_diag(board, row, col);
     if (win) return true;
+
+    // OR REPLACE ABOVE WITH THIS ...
+    // return is_winning_row(board, row, piece) ||
+    //     is_winning_col(board, col, piece) |
+    //     is _winning_diag(board, row, col);
     
     // check if reverse diag is winning diag    
 
