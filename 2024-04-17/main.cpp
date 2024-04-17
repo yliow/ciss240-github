@@ -67,6 +67,8 @@ int main()
 
     int ship_row = n - 1;
     int ship_col = n / 2;
+    int alien_row = 0;
+    int alien_col = 0;
 
     char surface[n][n];
 
@@ -74,6 +76,7 @@ int main()
     {
         clear(surface);
         surface[ship_row][ship_col] = 'A';
+        surface[alien_row][alien_col] = 'v';
         draw(surface);
         std::cout << "l-left r-right f-fire n-no input q-quit\n";
         char input;
