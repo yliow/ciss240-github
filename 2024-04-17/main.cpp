@@ -45,7 +45,7 @@
 //     return true;
 // }
 
-const int n = 10;
+const int n = 9;
 
 void clear(char surface[n][n]);
 void draw(char surface[n][n]);
@@ -65,7 +65,7 @@ int main()
     //std::cout << y << '\n';
     //std::cout << (x != y) << '\n';
 
-    int ship_row = 9;
+    int ship_row = n - 1;
     int ship_col = n / 2;
 
     char surface[n][n];
