@@ -87,7 +87,7 @@ int main()
         }
         else if (input == 'r')
         {
-            if (ship_col < n)
+            if (ship_col < n - 1)
             {
                 ++ship_col;
             }
