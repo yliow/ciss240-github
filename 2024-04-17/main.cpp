@@ -47,6 +47,8 @@
 
 const int n = 10;
 
+void clear(char surface[n][n]);
+
 int main()
 {
 
@@ -74,4 +76,11 @@ int main()
 
 void clear(char surface[n][n])
 {
+    for (int r = 0; r < n; ++r)
+    {
+        for (int c = 0; c < n; ++c)
+        {
+            surface[r][c] = ' ';
+        }       
+    }       
 }
