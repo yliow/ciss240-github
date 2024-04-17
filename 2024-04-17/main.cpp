@@ -48,6 +48,7 @@
 const int n = 10;
 
 void clear(char surface[n][n]);
+void draw(char surface[n][n]);
 
 int main()
 {
@@ -68,7 +69,9 @@ int main()
     int ship_col = n / 2;
 
     char surface[n][n];
+    
     clear(surface);
+    surface[ship_row][ship_col] = 'A';
     draw(surface);
 
     return 0;
@@ -82,5 +85,18 @@ void clear(char surface[n][n])
         {
             surface[r][c] = ' ';
         }       
+    }       
+}
+
+void draw(char surface[n][n])
+{
+    for (int r = 0; r < n; ++r)
+    {
+        std::cout << '|';
+        for (int c = 0; c < n; ++c)
+        {
+            std::cout << surface[r][c];
+        }
+        std::cout << "|\n";
     }       
 }
