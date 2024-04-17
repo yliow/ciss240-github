@@ -69,11 +69,21 @@ int main()
     int ship_col = n / 2;
 
     char surface[n][n];
-    
-    clear(surface);
-    surface[ship_row][ship_col] = 'A';
-    draw(surface);
 
+    while (1)
+    {
+        clear(surface);
+        surface[ship_row][ship_col] = 'A';
+        draw(surface);
+        std::cout << "l-left r-right f-fire n-no input q-quit\n";
+        char input;
+        std::cin >> input;
+        if (input == 'l')
+        {
+            --ship_col;
+        }
+    }
+    
     return 0;
 }
 
