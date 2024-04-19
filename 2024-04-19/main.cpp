@@ -99,6 +99,11 @@ void move_alien(int & alien_col, int & alien_dcol)
         alien_col = n - 1;
         alien_dcol = -1;
     }
+    else if (alien_col <= -1)
+    {
+        alien_col = 0;
+        alien_dcol = 1;
+    }
 }
 
 void move_ship(char input, int & ship_col)
