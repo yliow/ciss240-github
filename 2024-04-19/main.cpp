@@ -97,8 +97,8 @@ int main()
             if (!laser_isalive)
             {
                 laser_isalive = true;
-                laser_row = ship_row - 1;
-                laser_col = ship_col - 1;
+                laser_row = ship_row;
+                laser_col = ship_col;
             }
         }
         move_ship(input, ship_col);
