@@ -94,9 +94,12 @@ int main()
         std::cin >> input;
         if (input == 'f')
         {
-            laser_isalive = true;
-            laser_row = ship_row - 1;
-            laser_col = ship_col;
+            if (!laser_isalive)
+            {
+                laser_isalive = true;
+                laser_row = ship_row - 1;
+                laser_col = ship_col - 1;
+            }
         }
         move_ship(input, ship_col);
         move_alien(alien_col, alien_dcol);
