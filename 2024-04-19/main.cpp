@@ -99,10 +99,18 @@ int main()
         }
         move_ship(input, ship_col);
         move_alien(alien_col, alien_dcol);
+        move_laser(laser_row);
     }
     
     return 0;
 }
+
+
+void move_laser(int & laser_row)
+{
+    --laser_row;
+}
+    
 
 void move_alien(int & alien_col, int & alien_dcol)
 {
