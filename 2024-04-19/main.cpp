@@ -70,7 +70,7 @@ int main()
     int ship_col = n / 2;
     int alien_row = 0;
     int alien_col = 0;
-
+    int alien_dcol = 1;
     char surface[n][n];
 
     while (1)
@@ -82,7 +82,8 @@ int main()
         std::cout << "l-left r-right f-fire n-no input q-quit\n";
         char input;
         std::cin >> input;
-        move_ship(input, ship_col)
+        move_ship(input, ship_col);
+        alien_col += alien_dcol;
     }
     
     return 0;
