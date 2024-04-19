@@ -2,6 +2,7 @@
 
 void move_ship(char input, int & ship_col);
 void move_alien(int & alien_col, int & alien_dcol);
+void move_laser(int & laser_row);
 
 // void swap(int & a, int & b)
 // {
