@@ -94,6 +94,8 @@ int main()
         if (input == 'f')
         {
             laser_isalive = true;
+            laser_row = ship_row - 1;
+            laser_col = ship_col;
         }
         move_ship(input, ship_col);
         move_alien(alien_col, alien_dcol);
