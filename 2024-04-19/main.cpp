@@ -91,6 +91,10 @@ int main()
         std::cout << "l-left r-right f-fire n-no input q-quit\n";
         char input;
         std::cin >> input;
+        if (input == 'f')
+        {
+            laser_isalive = true;
+        }
         move_ship(input, ship_col);
         move_alien(alien_col, alien_dcol);
     }
