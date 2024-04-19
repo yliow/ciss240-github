@@ -2,8 +2,8 @@
 
 void move_ship(char input, int & ship_col);
 void move_alien(int & alien_col, int & alien_dcol);
-void move_laser(int & laser_row);
-
+void move_laser(bool & laser_isalive, int & laser_row)
+    
 // void swap(int & a, int & b)
 // {
 //     int t = a;
@@ -100,16 +100,23 @@ int main()
         }
         move_ship(input, ship_col);
         move_alien(alien_col, alien_dcol);
-        move_laser(laser_row);
+        move_laser(laser_isalive, laser_row);
     }
     
     return 0;
 }
 
 
-void move_laser(int & laser_row)
+void move_laser(bool & laser_isalive, int & laser_row)
 {
-    --laser_row;
+    if (laser_isalive)
+    {
+        --laser_row;
+        if (laser_row == -1)
+        {
+            laser_isalive = false;
+        }
+    }
 }
     
 
