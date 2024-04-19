@@ -1,7 +1,7 @@
 #include <iostream>
 
 void move_ship(char input, int & ship_col);
-void move_alien(int & alien_col, int alien_dcol);
+void move_alien(int & alien_col, & int alien_dcol);
 
 // void swap(int & a, int & b)
 // {
@@ -91,7 +91,7 @@ int main()
     return 0;
 }
 
-void move_alien(int & alien_col, int alien_dcol)
+void move_alien(int & alien_col, int & alien_dcol)
 {
     alien_col += alien_dcol;        
     if (alien_col >= n)
