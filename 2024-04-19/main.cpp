@@ -73,6 +73,9 @@ int main()
     int alien_row = 0;
     int alien_col = 0;
     int alien_dcol = 1;
+    int laser_row = 0;
+    int laser_col = 0;
+    bool laser_isalive = false;
     char surface[n][n];
 
     while (1)
@@ -80,6 +83,10 @@ int main()
         clear(surface);
         surface[ship_row][ship_col] = 'A';
         surface[alien_row][alien_col] = 'v';
+        if (laser_isalive)
+        {
+            surface[laser_row][laser_col] = '|';
+        }
         draw(surface);
         std::cout << "l-left r-right f-fire n-no input q-quit\n";
         char input;
