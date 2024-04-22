@@ -4,50 +4,50 @@ void move_ship(char input, int & ship_col);
 void move_alien(int & alien_col, int & alien_dcol);
 void move_laser(bool & laser_isalive, int & laser_row);
     
-// void swap(int & a, int & b)
-// {
-//     int t = a;
-//     a = b;
-//     b = t;
-// }
-// void bubblesort(int x[], int n)
-// {
-//     for (int i = 0; i < n - 2; ++i)
-//     {
-//         for (int j = 0; j <= i; ++j)
-//         {
-//             if (x[j] > x[j + 1])
-//             {
-//                 swap(x[j], x[j + 1]);
-//             }    
-//         }
-//     }
-// }
+void swap(int & a, int & b)
+{
+    int t = a;
+    a = b;
+    b = t;
+}
+void bubblesort(int x[], int n)
+{
+    for (int i = n - 2; i >= 0; --i)
+    {
+        for (int j = 0; j <= i; ++j)
+        {
+            if (x[j] > x[j + 1])
+            {
+                swap(x[j], x[j + 1]);
+            }    
+        }
+    }
+}
 
-// int count(int x[], int n, int target)
-// {
-//     int counter = 0;
-//     for (int i = 0; i < n; ++i)
-//     {
-//         if (x[i] == target)
-//         {
-//             ++counter;
-//         }
-//     }
-//     return counter;
-// }
+int count(int x[], int n, int target)
+{
+    int counter = 0;
+    for (int i = 0; i < n; ++i)
+    {
+        if (x[i] == target)
+        {
+            ++counter;
+        }
+    }
+    return counter;
+}
 
-// bool isequal(int x[], int y[], int start, int end)
-// {
-//     for (int i = start; i < end; ++i)
-//     {
-//         if (x[i] != y[i])
-//         {
-//             return false;
-//         }
-//     }
-//     return true;
-// }
+bool isequal(int x[], int y[], int start, int end)
+{
+    for (int i = start; i < end; ++i)
+    {
+        if (x[i] != y[i])
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
 const int n = 9;
 
@@ -57,17 +57,22 @@ void draw(char surface[n][n]);
 int main()
 {
 
-    // int x[1000] = {5, 3, 1, 2, 4, 6};
-    // bubblesort(x, 6);
+    int x[1000] = {5, 3, 1, 2, 4, 0};
+    bubblesort(x, 6);
+    for (int i = 0; i < 6; ++i)
+    {
+        std::cout << x[i] << ' ';
+    }
+    std::cout << '\n';
 
-    // int x[3] = {4, 2, 5};
-    // int y[3] = {4, 2, 5};
-    // std::cout << isequal(x, y, 0, 3) << '\n';
-    // this does not compare array contents!!!!!!!
-    //std::cout << (x == y) << '\n';
-    //std::cout << x << '\n';
-    //std::cout << y << '\n';
-    //std::cout << (x != y) << '\n';
+    int x[3] = {4, 2, 5};
+    int y[3] = {4, 2, 5};
+    std::cout << isequal(x, y, 0, 3) << '\n';
+    this does not compare array contents!!!!!!!
+    std::cout << (x == y) << '\n';
+    std::cout << x << '\n';
+    std::cout << y << '\n';
+    std::cout << (x != y) << '\n';
 
     int ship_row = n - 1;
     int ship_col = n / 2;
