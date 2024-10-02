@@ -43,9 +43,52 @@ int main()
     // }
     // std::cout << RAND_MAX << '\n';
 
+    // random int in 0..6
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << rand() % 7 << '\n';
+    // }
+
+    // random int in 1..6
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << rand() % 6 + 1 << '\n';
+    // }
+
+    // random int in 12..15
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << rand() % 4 + 12 << '\n';
+    // }
+
+    // random # in -10..-5
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << rand() % 6 - 10 << '\n';
+    // }
+
+    // random # in -101..3
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << rand() % 105 - 101 << '\n';
+    // }
+
+    // random double in 0.0 .. 1.0
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << double(rand()) / RAND_MAX << '\n';
+    // }
+
+    // random double in 0.0 .. 3.0
+    // for (int i = 0; i < 20; ++i)
+    // {
+    //     std::cout << double(rand()) / RAND_MAX * 3.0 << '\n';
+    // }
+
+    // random double in 1.5 .. 3.0
     for (int i = 0; i < 20; ++i)
     {
-        std::cout << rand() % 7 << '\n';
+        std::cout << double(rand()) / RAND_MAX * 1.5 + 1.5 << '\n';
     }
 
 
