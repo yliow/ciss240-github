@@ -80,11 +80,15 @@ int main()
     //     std::cout << n << " is odd\n";
     // }
 
-    std::cout << "What is the product of 97 and 94? ";
+    srand((unsigned int) time(NULL));
+    int x = rand() % 10 + 90;
+    int y = rand() % 10 + 90;
+
+    std::cout << "What is the product of " << x << " and " << y << "? ";
     int guess;
     std::cin >> guess;
 
-    if (guess == 9118)
+    if (guess == x * y)
     {
         std::cout << "Correct!\n";
     }
