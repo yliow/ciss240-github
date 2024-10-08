@@ -88,13 +88,14 @@ int main()
     int guess;
     std::cin >> guess;
 
-    if (guess == x * y)
+    int answer = x * y;
+    if (guess == answer)
     {
         std::cout << "Correct!\n";
     }
     else
     {
-        std::cout << "Wrong!\n";
+        std::cout << "Wrong! The correct answer is " << answer << "\n";
     }
     
     return 0;
