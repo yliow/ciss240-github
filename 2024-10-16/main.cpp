@@ -15,5 +15,11 @@ int main()
     //     std::cout << std::setw(8) << i
     //               << std::setw(8) << i * i << '\n';
     // }
+
+    for (double x = 3.1; x < 7.2; x += 0.1)
+    {
+        std::cout << x << '\n';
+    }
+    
     return 0;
 }
