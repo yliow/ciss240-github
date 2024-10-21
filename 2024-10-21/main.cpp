@@ -58,15 +58,35 @@ int main()
     }
 
     // compute (n - r)! and store in c
-    int c = 1;
-    for (int i = 1; i <= n - r; ++i)
-    {
-        c *= i;
-    }
+    // int c = 1;
+    // for (int i = 1; i <= n - r; ++i)
+    // {
+    //     c *= i;
+    // }
 
-    std::cout << a << ' ' << b << ' ' << c << '\n';
-    int n_choose_r = a / (b * c);
-    std::cout << "C(" << n << ", " << r << ") = " << n_choose_r << '\n';
+    // std::cout << a << ' ' << b << ' ' << c << '\n';
+    // int n_choose_r = a / (b * c);
+    // std::cout << "C(" << n << ", " << r << ") = " << n_choose_r << '\n';
+
+
+    // min computation
+    int n;
+    std::cin >> n;
+
+    int x; // this is for input
+    std::cin >> x;
+    int min = x;
+
+    for (int i = 1; i < n; ++i)
+    {
+        std::cin >> x;
+        if (x < min)
+        {
+            min = x;
+        }
+        std::cout << min << '\n';
+    }
+    std::cout << "final min:" << min << '\n';
     
     return 0;
 }
