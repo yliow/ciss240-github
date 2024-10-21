@@ -40,22 +40,22 @@ int main()
     // std::cout << "final p:" << p << '\n';
 
     // n-choose-r function
-    int n, r;
-    std::cin >> n >> r;
+    // int n, r;
+    // std::cin >> n >> r;
 
-    // compute n! and store in a
-    int a = 1;
-    for (int i = 1; i < n + 1; ++i)
-    {
-        a *= i;
-    }
+    // // compute n! and store in a
+    // int a = 1;
+    // for (int i = 1; i < n + 1; ++i)
+    // {
+    //     a *= i;
+    // }
 
-    // compute r! and store in b
-    int b = 1;
-    for (int i = 1; i <= r; ++i)
-    {
-        b *= i;
-    }
+    // // compute r! and store in b
+    // int b = 1;
+    // for (int i = 1; i <= r; ++i)
+    // {
+    //     b *= i;
+    // }
 
     // compute (n - r)! and store in c
     // int c = 1;
