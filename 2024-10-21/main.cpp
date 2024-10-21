@@ -28,16 +28,45 @@ int main()
     // std::cout << p << '\n';
 
     // 2-power
-    int n;
-    std::cin >> n;
+    // int n;
+    // std::cin >> n;
 
-    int p = 1;
-    for (int i = 0; i < n; ++i)
+    // int p = 1;
+    // for (int i = 0; i < n; ++i)
+    // {
+    //     p *= 2;
+    //     std::cout << i << ' ' << p << '\n';
+    // }
+    // std::cout << "final p:" << p << '\n';
+
+    // n-choose-r function
+    int n, r;
+    std::cin >> n >> r;
+
+    // compute n! and store in a
+    int a = 1;
+    for (int i = 1; i < n + 1; ++i)
     {
-        p *= 2;
-        std::cout << i << ' ' << p << '\n';
+        a *= i;
     }
-    std::cout << "final p:" << p << '\n';
-   
+
+    // compute r! and store in b
+    int b = 1;
+    for (int i = 1; i <= r; ++i)
+    {
+        b *= i;
+    }
+
+    // compute (n - r)! and store in c
+    int c = 1;
+    for (int i = 1; i <= n - r; ++i)
+    {
+        c *= i;
+    }
+
+    std::cout << a << ' ' << b << ' ' << c << '\n';
+    int n_choose_r = a / (b * c);
+    std::cout << "C(" n << ", " << r << ") = " << n_choose_r << '\n';
+    
     return 0;
 }
