@@ -66,7 +66,7 @@ int main()
 
     std::cout << a << ' ' << b << ' ' << c << '\n';
     int n_choose_r = a / (b * c);
-    std::cout << "C(" n << ", " << r << ") = " << n_choose_r << '\n';
+    std::cout << "C(" << n << ", " << r << ") = " << n_choose_r << '\n';
     
     return 0;
 }
