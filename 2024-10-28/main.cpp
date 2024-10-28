@@ -55,6 +55,9 @@ int main()
     const int BEDROOM = 2;
     
     int player_room = KITCHEN;
+    int knive_room = KITCHEN; // rand() % 3
+    bool knive_picked = false;
+    
     char input;
 
     int endtime = 10;
@@ -66,6 +69,13 @@ int main()
             case KITCHEN:
                 std::cout << "you are in the kitchen\n";
                 std::cout << "options: n or e\n";
+                if (knive_room == KITCHEN)
+                {
+                    if (!knive_picked)
+                    {
+                        std::cout << "there's a knive\n";
+                    }
+                }
                 std::cout << "input: ";
                 std::cin >> input;
                 if (input == 'n')
@@ -76,7 +86,11 @@ int main()
                 {
                     player_room = BEDROOM;
                 }
-                else
+                else if (input == 'k')
+                {
+                    knife_picked = true;
+                }
+                else 
                 {
                     std::cout << "wrong input\n";
                 }
@@ -84,6 +98,10 @@ int main()
             case LIVINGROOM:
                 std::cout << "you are in the livingroom\n";
                 std::cout << "options: s or w\n";
+                if (knive_room == LIVINGROOM)
+                {
+                    std::cout << "there's a knive\n";
+                }
                 std::cout << "input: ";
                 std::cin >> input;
                 if (input == 's')
@@ -102,6 +120,10 @@ int main()
             case BEDROOM:
                 std::cout << "you are in the bedroom\n";
                 std::cout << "options: s or w\n";
+                if (knive_room == BEDROOM)
+                {
+                    std::cout << "there's a knive\n";
+                }
                 std::cout << "input: ";
                 std::cin >> input;
                 if (input == 's')
