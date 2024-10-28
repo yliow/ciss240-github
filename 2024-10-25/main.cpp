@@ -57,14 +57,38 @@ int main()
     int player_room = KITCHEN;
     char input;
 
-    switch (player_room)
+    int endtime = 10;
+    for (int t = 0; t < endtime; ++t)
     {
-        case KITCHEN:
-            std::cout << "you are in the kitchen\n";
-            std::cout << "options: n or e\n";
-            std::cout << "input: ";
-            std::cin >> input;
-            break;
+        switch (player_room)
+        {
+            case KITCHEN:
+                std::cout << "you are in the kitchen\n";
+                std::cout << "options: n or e\n";
+                std::cout << "input: ";
+                std::cin >> input;
+                if (input == 'n')
+                {
+                    player_room = LIVINGROOM;
+                }
+                else if (input == 'e')
+                {
+                    player_room = BEDROOM;
+                }
+                break;
+            case LIVINGROOM:
+                std::cout << "you are in the livingroom\n";
+                std::cout << "options: s or w\n";
+                std::cout << "input: ";
+                std::cin >> input;
+                break;
+            case BEDROOM:
+                std::cout << "you are in the bedroom\n";
+                std::cout << "options: s or w\n";
+                std::cout << "input: ";
+                std::cin >> input;
+                break;
+        }
     }
     
     return 0;
