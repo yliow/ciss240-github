@@ -50,6 +50,9 @@ int main()
 
     // text based adventure game from 80s
 
+
+    // simple game
+    /*
     const int KITCHEN = 0;
     const int LIVINGROOM = 1;
     const int BEDROOM = 2;
@@ -141,6 +144,39 @@ int main()
                 break;
         }
     }
+    */
+
+
+    // find root of sin(x) near 3.
+    double a, b;
+    std::cin >> a >> b;
+    int n; // number of points
+    std::cin >> n;
+    double dx = (b - a) / (n - 1);
+
+    double min;
+    double x_min;
+    
+    double x = a;
+    x_min = a;
+    min = fabs(sin(x));
+    std::cout << x << ' ' << fabs(sin(x)) << ' ' << min << '\n';
+
+    x += dx;
+    for (int i = 2; i <= n; ++i)
+    {
+        double y = fabs(sin(x));
+        if (y < min)
+        {
+            min = y;
+            x_min = x;
+        }
+        x += dx;
+        std::cout << x << ' ' << y << ' ' << min << '\n';
+    }
+    std::cout << "root is " << x_min << '\n';
+
+
     
     return 0;
 }
