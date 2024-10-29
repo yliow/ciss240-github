@@ -175,8 +175,6 @@ int main()
         std::cout << x << ' ' << y << ' ' << min << '\n';
     }
     std::cout << "root is " << x_min << '\n';
-
-
     
     return 0;
 }
