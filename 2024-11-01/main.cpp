@@ -2,6 +2,7 @@
 
 int main()
 {
+    /*
     int n;
     std::cin >> n;
 
@@ -27,6 +28,19 @@ int main()
         // for next iteration ...
         nstars += 2;
     }
+    */
+
+    /*
+    for (int i = 0; i < 10; i += 2)
+    {
+        std::cout << "top of loop ... i = " << i << '\n';
+        if (i == 4)
+        {
+            continue; 
+        }
+        std::cout << "bottom of loop\n";
+    }
+    */
     
     return 0;
 }
