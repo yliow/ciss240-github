@@ -47,12 +47,19 @@ int main()
     std::cin >> n;
 
     bool isprime = true;
-    for (int d = 2; d < n; ++d)
+    if (n <= 1)
     {
-        if (n % d == 0)
+        isprime = false;
+    }
+    else
+    {
+        for (int d = 2; d < n; ++d)
         {
-            isprime = false;
-            break;
+            if (n % d == 0)
+            {
+                isprime = false;
+                break;
+            }
         }
     }
 
