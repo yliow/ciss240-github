@@ -41,6 +41,28 @@ int main()
         std::cout << "bottom of loop\n";
     }
     */
-    
+
+    // prime testing (primality test)
+    int n;
+    std::cin >> n;
+
+    bool isprime = true;
+    for (int d = 2; d < n; ++d)
+    {
+        if (n % d == 0)
+        {
+            isprime = false;
+            break;
+        }
+    }
+
+    if (isprime)
+    {
+        std::cout << n << " is prime\n";
+    }
+    else
+    {
+        std::cout << n << " is not a prime\n";
+    }
     return 0;
 }
