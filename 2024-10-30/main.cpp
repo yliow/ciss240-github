@@ -43,6 +43,7 @@ int main()
     */
 
     // draw rt angle triangle, rt angle bottom left
+    /*
     int n;
     std::cin >> n;
     for (int i = 1; i <= n; ++i)
@@ -54,6 +55,24 @@ int main()
         }
         std::cout << '\n';
     }
-    
+    */
+
+    // drawing quad (pg 17)
+    int n;
+    std::cin >> n;
+    for (int i = n - 1; i >= 0; --i)
+    {
+        //std::cout << i << ' ' << n << '\n';
+        // print i spaces;
+        for (int j = 0; j < i; ++j)
+        {
+            std::cout << ' ';
+        }
+        for (int j = 0; j < n; ++j)
+        {
+            std::cout << '*';
+        }
+        std::cout << '\n';
+    }
     return 0;
 }
