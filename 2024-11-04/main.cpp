@@ -3,10 +3,9 @@
 
 bool is_prime(int n)
 {
-    bool isprime = true;
     if (n <= 1)
     {
-        isprime = false;
+        return false;
     }
     else
     {
@@ -14,12 +13,11 @@ bool is_prime(int n)
         {
             if (n % d == 0)
             {
-                isprime = false;
-                break;
+                return false;
             }
         }
     }
-    return isprime;
+    return true;
 }
 
 int main()
@@ -68,10 +66,10 @@ int main()
     //int n;
     //std::cin >> n;
 
+    /*
     for (int n = 1; n <= 100000; ++n)
     {
-        bool isprime = is_prime(n);
-        if (isprime)
+        if (is_prime(n))
         {
             std::cout << n << " is prime\n";
         }
@@ -80,6 +78,23 @@ int main()
         //     std::cout << n << " is not a prime\n";
         // }
     }
+    */
+
+
+    // find pythogaras triples where hypothenuse is z given by user
+    int z;
+    std:: cin >> z;
+    for (int x = 1; x <= z; ++x)
+    {
+        for (int y = x; y <= z; ++y)
+        {
+            if (x * x + y * y == z * z)
+            {
+                std::cout << x << ' ' << y << ' ' << z << '\n';
+            }
+        }
+    }
+
     
     return 0;
 }
