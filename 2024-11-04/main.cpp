@@ -1,4 +1,26 @@
 #include <iostream>
+#include <cmath>
+
+bool is_prime(int n)
+{
+    bool isprime = true;
+    if (n <= 1)
+    {
+        isprime = false;
+    }
+    else
+    {
+        for (int d = 2; d <= sqrt(n); ++d)
+        {
+            if (n % d == 0)
+            {
+                isprime = false;
+                break;
+            }
+        }
+    }
+    return isprime;
+}
 
 int main()
 {
@@ -46,33 +68,17 @@ int main()
     //int n;
     //std::cin >> n;
 
-    for (int n = 1; n <= 1000000; ++n)
+    for (int n = 1; n <= 100000; ++n)
     {
-        bool isprime = true;
-        if (n <= 1)
-        {
-            isprime = false;
-        }
-        else
-        {
-            for (int d = 2; d < n; ++d)
-            {
-                if (n % d == 0)
-                {
-                    isprime = false;
-                    break;
-                }
-            }
-        }
-
+        bool isprime = is_prime(n);
         if (isprime)
         {
             std::cout << n << " is prime\n";
         }
-        else
-        {
-            std::cout << n << " is not a prime\n";
-        }
+        // else
+        // {
+        //     std::cout << n << " is not a prime\n";
+        // }
     }
     
     return 0;
