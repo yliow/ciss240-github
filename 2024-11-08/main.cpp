@@ -40,6 +40,11 @@ int main()
 
         std::cout << "enter num units: ";
         std::cin >> num_units;
+        if (num_units < 0)
+        {
+            std::cout << "number of units must be > 0\n";
+            continue;
+        }
              
         // process
         total = num_units * unit_price;
