@@ -26,13 +26,16 @@ int main()
     while (1)
     {
         // get input
-        std::cout << "enter unit price and num units: ";
-        std::cin >> unit_price >> num_units;
+        std::cout << "enter unit price (-1 to stop) ";
+        std::cin >> unit_price;
         if (unit_price == -1)
         {
             break;
         }
 
+        std::cout << "enter num units: ";
+        std::cin >> num_units
+             
         // process
         total = num_units * unit_price;
         total = total * (1 + TAX);
