@@ -32,9 +32,14 @@ int main()
         {
             break;
         }
+        else if (unit_price < 0)
+        {
+            std::cout << "unit price must be > 0\n";
+            continue;
+        }
 
         std::cout << "enter num units: ";
-        std::cin >> num_units
+        std::cin >> num_units;
              
         // process
         total = num_units * unit_price;
