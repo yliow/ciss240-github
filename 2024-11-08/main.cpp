@@ -28,6 +28,10 @@ int main()
         // get input
         std::cout << "enter unit price and num units: ";
         std::cin >> unit_price >> num_units;
+        if (unit_price == -1)
+        {
+            break;
+        }
 
         // process
         total = num_units * unit_price;
