@@ -6,7 +6,7 @@ int main()
     int n;
     std::cin >> n;
 
-    int numdigits = 9;
+    int numdigits = 0;
     while (n != 0)
     {
         std::cout << "\ntop ... n, numdigits:" << n << ' ' << numdigits << '\n';
