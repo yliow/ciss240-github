@@ -30,7 +30,7 @@ int main()
 
     // compute 1/1^2 + ... + 1/10^2
     double s = 0;
-    for (int i = 1; i <= 10; ++i)
+    for (int i = 1; i <= 1000000000; ++i)
     {
         double term = 1.0 / (i * i);
         s += term;
