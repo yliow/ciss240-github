@@ -29,12 +29,18 @@ int main()
     */
 
     // compute 1/1^2 + ... + 1/10^2
-    double s = 0;
-    for (int i = 1; i <= 1000000000; ++i)
+    double s0 = 0.0; // think previous
+    double s1 = 0.0; // think of this as "now"
+    while (???????)
     {
         double term = 1.0 / (i * i);
-        s += term;
-        std::cout << i << ' ' << term << ' ' << s << '\n';
+        s1 += term;
+        std::cout << i << ' ' << term << ' ' << s1 << '\n';
+
+        // ---------------
+
+        s0 = s1;
+        
     }
     std::cout << s << '\n';
 
