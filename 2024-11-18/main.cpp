@@ -22,7 +22,7 @@ int main()
     */
 
     const int N = 8;
-    int x[N] = {5, 3, 1, 0, 2, 4, 9, 8};
+    int x[N] = {8, 5, 3, 9, 0, 2, 4, 1};
 
     int t;
     for (int i = N - 2; i >= 0; --i)
@@ -35,10 +35,15 @@ int main()
                 x[j] = x[j + 1];
                 x[j + 1] = t;
             }
+
+            // print
+            for (int k = 0; k < N; ++k)
+            {
+                std::cout << x[k] << ' ';
+            }
+            std::cout << '\n';
         }
     }
 
-
-    
     return 0;
 }
