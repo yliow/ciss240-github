@@ -62,6 +62,8 @@ int main()
     while (lower <= upper)
     {
         int mid = (lower + upper) / 2;
+        std::cout << lower << ' ' << mid << ' ' << upper << '\n';
+
         if (x[mid] == target)
         {
             index = mid;
@@ -76,6 +78,6 @@ int main()
             lower = mid + 1;
         }
     }
-    
+    std::cout << "index:" << index << '\n';
     return 0;
 }
