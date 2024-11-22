@@ -19,62 +19,66 @@ int main()
 
     init(ca, n);
 
-    // print the ca
-    for (int i = 0; i <= 2 * n; ++i)
+    for (int i = 0; i < n; ++i)
     {
-        std::cout << (ca[i] == 1 ? 'X' : ' ');
-    }
-    std::cout << '\n';
-    
-    // compute next generation of ca
-    t[0] = ca[0];
-    t[2 * n] = ca[2 * n];
-    for (int i = 1; i < 2 * n; ++i)
-    {
-        if (ca[i - 1] == 0 && ca[i] == 0 && ca[i + 1] == 0)
+        // print the ca
+        std::cout << '|';
+        for (int i = 0; i <= 2 * n; ++i)
         {
-            t[i] = 0;
+            std::cout << (ca[i] == 1 ? 'X' : ' ');
         }
-        else if (ca[i - 1] == 0 && ca[i] == 0 && ca[i + 1] == 1)
+        std::cout << '|';
+        std::cout << '\n';
+        
+        // compute next generation of ca
+        t[0] = ca[0];
+        t[2 * n] = ca[2 * n];
+        for (int i = 1; i < 2 * n; ++i)
         {
-            t[i] = 1;
+            if (ca[i - 1] == 0 && ca[i] == 0 && ca[i + 1] == 0)
+            {
+                t[i] = 0;
+            }
+            else if (ca[i - 1] == 0 && ca[i] == 0 && ca[i + 1] == 1)
+            {
+                t[i] = 1;
+            }
+            else if (ca[i - 1] == 0 && ca[i] == 1 && ca[i + 1] == 0)
+            {
+                t[i] = 0;
+            }
+            else if (ca[i - 1] == 0 && ca[i] == 1 && ca[i + 1] == 1)
+            {
+                t[i] = 1;
+            }
+            else if (ca[i - 1] == 0 && ca[i] == 1 && ca[i + 1] == 1)
+            {
+                t[i] = 1;
+            }
+            else if (ca[i - 1] == 1 && ca[i] == 0 && ca[i + 1] == 0)
+            {
+                t[i] = 1;
+            }
+            else if (ca[i - 1] == 1 && ca[i] == 0 && ca[i + 1] == 1)
+            {
+                t[i] = 0;
+            }
+            else if (ca[i - 1] == 1 && ca[i] == 1 && ca[i + 1] == 0)
+            {
+                t[i] = 1;
+            }
+            else if (ca[i - 1] == 1 && ca[i] == 1 && ca[i + 1] == 1)
+            {
+                t[i] = 0;
+            }
         }
-        else if (ca[i - 1] == 0 && ca[i] == 1 && ca[i + 1] == 0)
+        
+        // copy t back to ca
+        for (int i = 0; i <= 2 * n; ++i)
         {
-            t[i] = 0;
+            ca[i] = t[i];
         }
-        else if (ca[i - 1] == 0 && ca[i] == 1 && ca[i + 1] == 1)
-        {
-            t[i] = 1;
-        }
-        else if (ca[i - 1] == 0 && ca[i] == 1 && ca[i + 1] == 1)
-        {
-            t[i] = 1;
-        }
-        else if (ca[i - 1] == 1 && ca[i] == 0 && ca[i + 1] == 0)
-        {
-            t[i] = 1;
-        }
-        else if (ca[i - 1] == 1 && ca[i] == 0 && ca[i + 1] == 1)
-        {
-            t[i] = 0;
-        }
-        else if (ca[i - 1] == 1 && ca[i] == 1 && ca[i + 1] == 0)
-        {
-            t[i] = 1;
-        }
-        else if (ca[i - 1] == 1 && ca[i] == 1 && ca[i + 1] == 1)
-        {
-            t[i] = 0;
-        }
-    }
-
-    // copy t back to ca
-    for (int i = 0; i <= 2 * n; ++i)
-    {
-        ca[i] = t[i];
-    }
-    
+    } // for-loop
     
     return 0;
 }
