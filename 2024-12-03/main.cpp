@@ -3,6 +3,7 @@
 
 bool isprime(int);
 int numdigits(int);
+int max(int, int);
 
 int main()
 {
@@ -11,10 +12,14 @@ int main()
     //     std::cout << n << ": " << isprime(n) << '\n';
     // }
 
-    for (int n = 0; n < 100; ++n)
-    {
-        std::cout << n << ": " << numdigits(n) << '\n';
-    }
+    // for (int n = 123124; n < 123135; ++n)
+    // {
+    //     std::cout << n << ": " << numdigits(n) << '\n';
+    // }
+
+    std::cout << max(2, 5) << '\n';
+    std::cout << max(5, 2) << '\n';
+    
     return 0;
 }
 
@@ -52,5 +57,17 @@ bool isprime(int n)
             }
         }
         return true;
+    }
+}
+
+int max(int i, int j)
+{
+    if (i >= j)
+    {
+        return i;
+    }
+    else
+    {
+        return j;
     }
 }
