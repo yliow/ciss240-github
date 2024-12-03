@@ -18,6 +18,13 @@ void inc1(int & i)
     ++i;
     std::cout <<"in inc1 ... i:" << i << '\n';
 }
+void swap0(int a, int b)
+{
+    int t = a;
+    a = b;
+    b = t;
+}
+    
 int main()
 {
     // for (int n = 0; n < 20; ++n)
@@ -30,17 +37,22 @@ int main()
     //     std::cout << n << ": " << numdigits(n) << '\n';
     // }
 
-    std::cout << max(2, 5) << '\n';
-    std::cout << max(5, 2) << '\n';
-    std::cout << avg(5, 2) << '\n';
+    // std::cout << max(2, 5) << '\n';
+    // std::cout << max(5, 2) << '\n';
+    // std::cout << avg(5, 2) << '\n';
 
     // int i = 0;
     // inc0(i);
     // std::cout << "in main ... i:" << i << '\n';
 
-    int i = 0;
-    inc1(i);
-    std::cout << "in main ... i:" << i << '\n';
+    // int i = 0;
+    // inc1(i);
+    // std::cout << "in main ... i:" << i << '\n';
+
+    int a = 2, b = 5;
+    swap0(a, b);
+    std::cout << "a, b:" << a << ' ' << b << '\n';
+    
     return 0;
 }
 
