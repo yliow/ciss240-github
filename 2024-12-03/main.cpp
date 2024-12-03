@@ -4,7 +4,20 @@
 bool isprime(int);
 int numdigits(int);
 int max(int, int);
+double avg(int x, int y);
 
+void inc0(int i)
+{
+    std::cout << "in inc0 ... i:" << i << '\n';
+    ++i;
+    std::cout <<"in inc0 ... i:" << i << '\n';
+}
+void inc1(int & i)
+{
+    std::cout << "in inc1 ... i:" << i << '\n';
+    ++i;
+    std::cout <<"in inc1 ... i:" << i << '\n';
+}
 int main()
 {
     // for (int n = 0; n < 20; ++n)
@@ -19,7 +32,15 @@ int main()
 
     std::cout << max(2, 5) << '\n';
     std::cout << max(5, 2) << '\n';
-    
+    std::cout << avg(5, 2) << '\n';
+
+    // int i = 0;
+    // inc0(i);
+    // std::cout << "in main ... i:" << i << '\n';
+
+    int i = 0;
+    inc1(i);
+    std::cout << "in main ... i:" << i << '\n';
     return 0;
 }
 
@@ -70,4 +91,10 @@ int max(int i, int j)
     // {
     //     return j;
     // }
+    return (i >= j ? i : j);
+}
+
+double avg(int x, int y)
+{
+    return (x + y) / 2.0;
 }
