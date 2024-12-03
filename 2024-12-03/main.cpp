@@ -24,6 +24,12 @@ void swap0(int a, int b)
     a = b;
     b = t;
 }
+void swap1(int & a, int & b)
+{
+    int t = a;
+    a = b;
+    b = t;
+}
     
 int main()
 {
@@ -51,6 +57,8 @@ int main()
 
     int a = 2, b = 5;
     swap0(a, b);
+    std::cout << "a, b:" << a << ' ' << b << '\n';
+    swap1(a, b);
     std::cout << "a, b:" << a << ' ' << b << '\n';
     
     return 0;
