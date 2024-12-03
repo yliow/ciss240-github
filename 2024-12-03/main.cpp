@@ -20,13 +20,20 @@ int main()
 
 int numdigits(int n)
 {
-    int c = 0;
-    while (n != 0)
+    if (n == 0)
     {
-        n /= 10;
-        ++c;
+        return 1;
     }
-    return c;
+    else
+    {
+        int c = 0;
+        while (n != 0)
+        {
+            n /= 10;
+            ++c;
+        }
+        return c;
+    }
 }
 
 bool isprime(int n)
