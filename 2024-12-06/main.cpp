@@ -1,5 +1,6 @@
 #include <iostream>
 
+void init(char board[8][8]);
 void print_board(char board[8][8]);
 
 int main()
@@ -14,8 +15,15 @@ int main()
     */
 
     char board[8][8];
+    init(board);
+    print_board(board);    
 
-    // clear the board
+    return 0;
+}
+
+// Set up initial chess game state
+void init(char board[8][8])
+{
     for (int r = 0; r < 8; ++r)
     {
         for (int c = 0; c < 8; ++c)
@@ -23,12 +31,7 @@ int main()
             board[r][c] = ' ';
         }
     }
-
-    print_board(board);    
-
-    return 0;
 }
-
 
 void print_board(char board[8][8])
 {
