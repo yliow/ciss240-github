@@ -92,34 +92,67 @@ int main()
     // }
     // std::cout << x0 << ' ' << x1 << ' ' << x2 << ' ' << x3 << '\n';
 
-    srand((unsigned int) time(NULL));
+    // srand((unsigned int) time(NULL));
 
-    int x = rand() % 10 + 90;
-    int y = rand() % 10 + 90;
-    std::cout << "What is " << x << " x " << y << "? ";
-    int guess;
-    std::cin >> guess;
+    // int x = rand() % 10 + 90;
+    // int y = rand() % 10 + 90;
+    // std::cout << "What is " << x << " x " << y << "? ";
+    // int guess;
+    // std::cin >> guess;
 
-    if (guess == x * y)
-    {
-        std::cout << "Correct!\n";
-    }
-    else
-    {
-        // First answer is incorrect
-        std::cout << "Incorrect! Try again.\n";
-        std::cout << "What is " << x << " x " << y << "? ";
-        std::cin >> guess;
+    // int score;
+    // if (guess == x * y)
+    // {
+    //     std::cout << "Correct!\n";
+    //     score = 2;
+    // }
+    // else
+    // {
+    //     // First answer is incorrect
+    //     std::cout << "Incorrect! Try again.\n";
+    //     std::cout << "What is " << x << " x " << y << "? ";
+    //     std::cin >> guess;
 
-        if (guess == x * y)
-        {
-            std::cout << "Correct!\n";
-        }
-        else
-        {
-            std::cout << "Incorrect! The correct answer is " << x * y << "\n";
-        }
-    }
+    //     if (guess == x * y)
+    //     {
+    //         std::cout << "Correct!\n";
+    //         score = 1;
+    //     }
+    //     else
+    //     {
+    //         std::cout << "Incorrect! The correct answer is " << x * y << "\n";
+    //         score = 0;
+    //     }
+    // }
+    // std::cout << "Score: " << score << '\n';
+
+
+    int x = 0, y = 1, z = 2;
+    int a;
+    // if (x + y < z)
+    // {
+    //     a = x;
+    // }
+    // else
+    // {
+    //     a = y + z;
+    // }
+    a = (x + y < z ? x : y + z);
+    std::cout << a << '\n';
+
+    // x, y. max of x, y -> a
+    // if (x >= y)
+    // {
+    //     a = x;
+    // }
+    // else
+    // {
+    //     a = y;
+    // }
+    a = (x >= y ? x : y);
+    b = (x >= 0 ? x : -x);
+
+    
     
     return 0;
 }
