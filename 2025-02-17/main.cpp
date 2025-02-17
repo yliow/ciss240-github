@@ -60,6 +60,7 @@ int main()
     */
 
     // linear search
+    int index;
     if (x0 == target)
     {
         index = 0;
