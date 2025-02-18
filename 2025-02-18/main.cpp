@@ -2,14 +2,14 @@
 
 /*
                      library
-                 N ^ /
-                  / /
-                 / vE
+                 N ^ /      \ ^W
+                  / /        \ \
+                 / vE        Ev \
            kitchen              study
-                  \
-                   \
-                  E v
-                     bedroom
+                  \ ^W       S^  /
+                   \ \       /  /
+                  E v \     /  vN
+                     bedroom 
   
  */
 
@@ -29,18 +29,24 @@ int main()
             std::cout << "You are in the kitchen.\n"
                       << "options: n, e\n";
             std::cin >> input;
-            if (input == 'n')
+            switch (input)
             {
-                q = LIBRARY;
-            }
-            else if (input == 'e')
-            {
-                q = BEDROOM;
-            }
-            else
-            {
-                std::cout << "invalid input\n";
-            }
+                case 'n':
+                {
+                    q = LIBRARY;
+                    break;
+                }
+                case 'e':
+                {
+                    q = BEDROOM;
+                    break;
+                }
+                default:
+                {
+                    std::cout << "invalid input\n";
+                    break;
+                }
+            } // switch (input)
             break;
         }
         case LIBRARY:
