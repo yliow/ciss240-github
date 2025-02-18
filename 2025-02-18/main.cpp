@@ -26,8 +26,21 @@ int main()
     {
         case KITCHEN:
         {
-            std::cout << "options: n, e\n";
+            std::cout << "You are in the kitchen.\n"
+                      << "options: n, e\n";
             std::cin >> input;
+            if (input == 'n')
+            {
+                q = LIBRARY;
+            }
+            else if (input == 'e')
+            {
+                q = BEDROOM;
+            }
+            else
+            {
+                std::cout << "invalid input\n";
+            }
             break;
         }
         case LIBRARY:
