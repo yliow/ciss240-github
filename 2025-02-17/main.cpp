@@ -131,23 +131,21 @@ int main()
 
     int x;
     std::cin >> x;
-
+    int i = 0;
     std::cout << "outside ... top\n";
-    if (x == 0)
+    switch (x)
     {
-        std::cout << "green\n";
-    }
-    else if (x == 1)
-    {
-        std::cout << "eggs\n";
-    }
-    else if (x == 2)
-    {
-        std::cout << "and\n";
-    }
-    else
-    {
-        std::cout << "ham\n";
+        case i: 
+            std::cout << "green\n";
+            break;
+        case 1: 
+            std::cout << "eggs\n";
+            //break;
+        case 2:
+            std::cout << "and\n";
+            break;
+        default:
+            std::cout << "ham\n";
     }
     std::cout << "outside ... bottom\n";
     return 0;
