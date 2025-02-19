@@ -1,10 +1,12 @@
 #include <iostream>
 
 /*
+  finite state automata (state diagram/machine)
+  
                      library
                  N ^ /      \ ^W
                   / /        \ \
-                 / vE        Ev \
+                 / vE        Wv \ <<<<
            kitchen              study
                   \ ^W       S^  /
                    \ \       /  /
@@ -51,14 +53,77 @@ int main()
         }
         case LIBRARY:
         {
+            std::cout << "You are in the library.\n"
+                      << "options: e, w\n";
+            std::cin >> input;
+            switch (input)
+            {
+                case 'e':
+                {
+                    q = KITCHEN;
+                    break;
+                }
+                case 'w':
+                {
+                    q = STUDY;
+                    break;
+                }
+                default:
+                {
+                    std::cout << "invalid input\n";
+                    break;
+                }
+            }
+
             break;
         }
         case STUDY:
         {
+            std::cout << "You are in the study.\n"
+                      << "options: n, w\n";
+            std::cin >> input;
+            switch (input)
+            {
+                case 'n':
+                {
+                    q = BEDROOM;
+                    break;
+                }
+                case 'w':
+                {
+                    q = LIBRARY;
+                    break;
+                }
+                default:
+                {
+                    std::cout << "invalid input\n";
+                }
+            }
             break;
         }
         case BEDROOM:
         {
+            std::cout << "You are in the bedroom.\n"
+                      << "options: s, w\n";
+            std::cin >> input;
+            switch (input)
+            {
+                case 's':
+                {
+                    q = STUDY;
+                    break;
+                }
+                case 'w':
+                {
+                    q = KITCHEN;
+                    break;
+                }
+                default:
+                {
+                    std::cout << "invalid input\n";
+                    break;
+                }
+            }
             break;
         }
     }
