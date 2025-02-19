@@ -1,6 +1,10 @@
 #include <iostream>
 
 /*
+  TuTh: 3-5
+  TuTh: 4-6
+  Tu:   3-5 <<<<<<<<<
+  Tu:   4-6
   finite state automata (state diagram/machine)
   
                      library
