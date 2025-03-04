@@ -66,6 +66,9 @@ int main()
         s += term;
         std::cout << i << ' ' << x << ' ' << dx << ' ' << y << ' ' << term
                   << ' ' << s << '\n';
+        
+        // update x for NEXT iteration
+        x += dx;
     }
 
     std::cout << "final s:" << s << '\n';
