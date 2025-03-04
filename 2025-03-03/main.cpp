@@ -38,20 +38,32 @@ int main()
     //     x += d;
     // }
 
-    // equally spaced points where n is NUMBER OF INTERVALS
-    int n; // number of INTERVALS
-    double a, b;
-    std::cin >> n >> a >> b;
-    double d = (b - a) / n;
-    double x = a;
-    for (int i = 0; i <= n; ++i)
-    {
-        std::cout << x << '\n';
+    // // equally spaced points where n is NUMBER OF INTERVALS
+    // int n; // number of INTERVALS
+    // double a, b;
+    // std::cin >> n >> a >> b;
+    // double d = (b - a) / n;
+    // double x = a;
+    // for (int i = 0; i <= n; ++i)
+    // {
+    //     std::cout << x << '\n';
 
-        x += d;
-    }
+    //     x += d;
+    // }
     
+    // area under parabola by specifying number of points
+    int n;
+    double a, b;
+    double dx = (b - a) / (n - 1);
 
+    double s = 0.0;
+    double x = a;
+    for (int i = 1; i < n; ++i)
+    {
+        double y = x * x;
+        double term = y * dx;
+        s += term;
+    }
     
     return 0;
 }
