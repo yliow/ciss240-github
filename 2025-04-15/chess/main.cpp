@@ -1,5 +1,7 @@
 #include <iostream>
 
+void init(char board[8][8]);
+
 int main()
 {
     // char board[2][3] = {{'c', 'a', 't'},
@@ -16,6 +18,14 @@ int main()
     //     std::cout << '\n';
     // }
     // std::cout << "+-+-+-+\n";
-   
+
+    char board[8][8];
+
+    init(board);
+    
     return 0;
+}
+
+void init(char board[8][8])
+{
 }
