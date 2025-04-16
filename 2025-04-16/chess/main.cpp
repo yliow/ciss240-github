@@ -1,6 +1,7 @@
 #include <iostream>
 
 bool isupper(char c);
+bool islower(char c);
 void init(char board[8][8]);
 void draw(char board[8][8]);
 void get_move(char board[8][8], char turn,
@@ -123,10 +124,16 @@ bool isupper(char c)
     return ('A' <= c && c <= 'Z');
 }
 
+bool islower(char c)
+{
+    return ('a' <= c && c <= 'z');
+}
+
 bool is_valid_W_P_move(char board[8][8], int r0, int c0, int r1, int c1)
 {
     if ((r1 == r0 - 1 && c1 == c0 && board[r1][c1] == ' ') // move up 1 square
         || (r0 == 6 && r1 == 4 && c1 == c0 && board[5][c0] == ' ' && board[4][c0] == ' ') // move up 2 sqs
+        || (r1 == r0 - 1 && c1 == c0 - 1 &&
         )
     {
         return true;
