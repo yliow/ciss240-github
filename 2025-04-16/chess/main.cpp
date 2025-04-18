@@ -10,6 +10,20 @@ bool is_valid_W_P_move(char board[8][8], int r0, int c0, int r1, int c1);
 
 int main()
 {
+    int z = 42;
+    std::cout << sizeof(z) << '\n';
+    std::cout << sizeof(int) << '\n';
+
+
+    std::cout << z % 2 << '\n';
+    std::cout << z / 2 % 2 << '\n';
+    std::cout << z / 4 % 2 << '\n';
+    std::cout << z / 8 % 2 << '\n';
+    std::cout << z / 16 % 2 << '\n';
+    std::cout << z / 32 % 2 << '\n';
+    std::cout << z / 64 % 2 << '\n';
+    
+    
     // char board[2][3] = {{'c', 'a', 't'},
     //                     {'c', 'a', 'b'}};
 
@@ -26,7 +40,12 @@ int main()
     // std::cout << "+-+-+-+\n";
 
     char board[8][8];
+    std::cout << sizeof(char) << '\n';
+    std::cout << sizeof(board) << '\n';
     init(board);
+    int grid[8][8];
+    std::cout << sizeof(grid) << '\n';
+    
     char turn = 'W';
 
     while (1)
@@ -39,7 +58,7 @@ int main()
         // if checkmate ... break loop
 
         // switch the turn
-        turn = (turn == 'W' ? 'B' : 'W')
+        turn = (turn == 'W' ? 'B' : 'W');
     }
     
     return 0;
@@ -133,7 +152,7 @@ bool is_valid_W_P_move(char board[8][8], int r0, int c0, int r1, int c1)
 {
     if ((r1 == r0 - 1 && c1 == c0 && board[r1][c1] == ' ') // move up 1 square
         || (r0 == 6 && r1 == 4 && c1 == c0 && board[5][c0] == ' ' && board[4][c0] == ' ') // move up 2 sqs
-        || (r1 == r0 - 1 && c1 == c0 - 1 &&
+        || (r1 == r0 - 1 && c1 == c0 - 1 && islower(board[r1][c1])) // capture to left
         )
     {
         return true;
