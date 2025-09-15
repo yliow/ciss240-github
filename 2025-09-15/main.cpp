@@ -10,6 +10,9 @@ int main()
     int y;
     std::cin >> y;
 
+    int prod = x * y;
+
+    std::cout << x << " * " << y << " = " << prod << '\n';
     
     return 0;
 }
