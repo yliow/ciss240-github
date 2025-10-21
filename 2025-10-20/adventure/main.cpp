@@ -9,10 +9,12 @@ int main()
     const int BEDROOM = 0;
     const int LIBRARY = 1;
     const int DINING_ROOM = 2;
-    
+    // transylvania -- 1984
     int q = rand() % 3; // 2; // state of room
     int dagger_room = BEDROOM;
     bool dagger_picked_up = false;
+    int wolf_room = BEDROOM;
+    bool wolf_killed = false;
     char c;
 
     for (int t = 0; t < 10; ++t)
