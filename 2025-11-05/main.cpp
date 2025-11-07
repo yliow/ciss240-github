@@ -72,21 +72,44 @@ int main()
     //int n;
     //std::cin >> n;
 
-    for (int n = 2; n < 1000001; ++n)
+    for (int n = 0; n < 20; ++n)
     {
+        // /* THE SLOW VERSION */
+        // bool isprime = true;
+        // for (int i = 2; i < n; ++i)
+        // {
+        //     if (n % i == 0)
+        //     {
+        //         isprime = false;
+        //         break;
+        //     }
+        // }
+
+        /* THE FAST VERSION */
         bool isprime = true;
-        for (int i = 2; i <= n; ++i)
+        if (n <= 1)
         {
-            if (n % i == 0)
+            isprime = false;
+        }
+        else
+        {
+            for (int i = 2; i <= sqrt(n); ++i)
             {
-                isprime = false;
-                break;
+                if (n % i == 0)
+                {
+                    isprime = false;
+                    break;
+                }
             }
         }
-        
-        std::cout << n << " is "
-                  << (isprime ? "" : "not")
-                  << " prime\n";
+
+        //stdcout << n << " is "
+        //    << (isprime ? "" : "not")
+        //    << " prime\n";
+        if (isprime)
+        {
+            std::cout << n << " is prime\n";
+        }
     }
     
     return 0;
