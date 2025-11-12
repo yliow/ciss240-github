@@ -55,8 +55,7 @@ int main()
 
     int n;
     std::cin >> n;
-    bool m = isprime(n);
-    if (m)
+    if (isprime(n))
     {
         std::cout << n << " is prime\n";
     }
