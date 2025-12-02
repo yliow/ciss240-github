@@ -16,9 +16,9 @@ int main()
     for (int c = 0; c < 8; ++c)
     {
         board[0][c] = pieces[c];
+        board[7][c] = pieces[c] - 'a' + 'A';
     }
     
-
     for (int c = 0; c < 8; ++c)
     {
         board[1][c] = 'p';
