@@ -61,7 +61,7 @@ bool is_valid(char board[8][8], char turn, int r0, int c0, int r1, int c1)
     // Check if piece belongs to turn/player
     char piece = board[r0][c0];
     if (turn == 'W'
-        && ((is(black(piece)) || (piece == ' ')
+        && ((is_black(piece)) || (piece == ' '))
         )
     {
         return false;
