@@ -4,6 +4,7 @@ void init(char board[8][8]);
 void print(char board[8][8]);
 void get_move(char board[8][8], char turn,
               int & r0, int & c0, int & r1, int & c1);
+bool is_valid(char board[8][8], char turn, int r0, int c0, int r1, int c1);
 
 
 int main()
@@ -39,9 +40,19 @@ void get_move(char board[8][8], char turn,
     while (1)
     {
         std::cin >> r0 >> c0 >> r1 >> c1;
+        if (is_valid(board, turn, r0, c0, r1, c1))
+        {
+            break;
+        }
     }
+    return;
 }
 
+
+bool is_valid(char board[8][8], char turn, int r0, int c0, int r1, int c1)
+{
+    return true; // TODO
+}
 
 // print the chessboard    
 void print(char board[8][8])
