@@ -2,7 +2,8 @@
 
 void init(char board[8][8]);
 void print(char board[8][8]);
-void get_move(char board[8][8], int & r0, int & c0, int & r1, int & c1);
+void get_move(char board[8][8], char turn,
+              int & r0, int & c0, int & r1, int & c1);
 
 
 int main()
@@ -17,7 +18,7 @@ int main()
 
         // get the move
         int r0, c0, r1, c1;
-        get_move(board, r0, c0, r1, c1);
+        get_move(board, turn, r0, c0, r1, c1);
         
         // make the move
         char piece = board[r0][c0];
