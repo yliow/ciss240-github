@@ -1,9 +1,7 @@
 #include <iostream>
 
-int main()
+void init(char board[8][8])
 {
-    char board[8][8];
-
     for (int r = 0; r < 8; ++r)
     {
         for (int c = 0; c < 8; ++c)
@@ -24,6 +22,14 @@ int main()
         board[1][c] = 'p';
         board[6][c] = 'p';
     }
+
+    return;
+}
+
+int main()
+{
+    char board[8][8];
+
    
     // print the chessboard
     std::cout << "+-+-+-+-+-+-+-+-+\n";
