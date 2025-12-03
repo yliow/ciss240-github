@@ -29,7 +29,7 @@ void init(char board[8][8])
 int main()
 {
     char board[8][8];
-
+    init(board);
    
     // print the chessboard
     std::cout << "+-+-+-+-+-+-+-+-+\n";
