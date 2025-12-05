@@ -1,17 +1,22 @@
 #include <iostream>
 
+const char WHITE = 'W';
+const char BLACK = 'B';
+
 void init(char board[8][8]);
 void print(char board[8][8]);
 void get_move(char board[8][8], char turn,
               int & r0, int & c0, int & r1, int & c1);
 bool is_valid(char board[8][8], char turn, int r0, int c0, int r1, int c1);
+bool is_white(char piece);
+bool is_black(char piece);
 
 
 int main()
 {
     char board[8][8];
     init(board);
-    char turn = 'W';
+    char turn = WHITE;
     while (1)
     {
         print(board);
@@ -44,6 +49,7 @@ void get_move(char board[8][8], char turn,
         {
             break;
         }
+        std::cout<< "WRONG MOVE!!! TRY AGAIN!!!\n";
     }
     return;
 }
@@ -56,16 +62,30 @@ bool is_black(char piece)
 }
 
 
+bool is_white(char piece)
+{
+    return (piece == 'P' || piece == 'R' || piece == 'N' || piece == 'B'
+            || piece == 'K' || piece == 'Q');
+}
+
+
 bool is_valid(char board[8][8], char turn, int r0, int c0, int r1, int c1)
 {
     // Check if piece belongs to turn/player
     char piece = board[r0][c0];
-    if (turn == 'W'
-        && ((is_black(piece)) || (piece == ' '))
-        )
+    if (piece == ' ')
     {
         return false;
     }
+    else if (turn == WHITE && is_black(piece))
+    {
+        return false;
+    }
+    else if (turn == BLACK && is_white(piece))
+    {
+        return false;
+    }
+
     return true; // TODO
 }
 
