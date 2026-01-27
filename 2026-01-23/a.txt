@@ -1,0 +1,17 @@
+main.cpp: In function ‘int main()’:
+main.cpp:5:18: error: ‘x’ was not declared in this scope
+    5 |     std::cout << x << '\n';
+      |                  ^
+
+main.cpp: In function ‘int main()’:
+main.cpp:5:18: error: ‘x’ was not declared in this scope
+    5 |     std::cout << x << '\n';
+      |                  ^
+
+
+In function ‘int main()’:
+main.cpp:7:9: error: redeclaration of ‘int x’
+    7 |     int x = -1;
+      |         ^
+main.cpp:6:9: note: ‘int x’ previously declared here
+    6 |     int x 
