@@ -7,6 +7,7 @@ void init(char ttt[ROW_SIZE][COL_SIZE]);
 void print(char ttt[ROW_SIZE][COL_SIZE]);
 void get_valid_input(char ttt[ROW_SIZE][COL_SIZE], char player,
                      int & r, int & c);
+bool check_game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c);
 
 int main()
 {
@@ -29,6 +30,11 @@ int main()
     }
     // print result of game
     return 0;
+}
+
+bool check_game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c)
+{
+    return false;
 }
 
 void get_valid_input(char ttt[ROW_SIZE][COL_SIZE],
