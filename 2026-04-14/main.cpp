@@ -7,7 +7,7 @@ void init(char ttt[ROW_SIZE][COL_SIZE]);
 void print(char ttt[ROW_SIZE][COL_SIZE]);
 void get_valid_input(char ttt[ROW_SIZE][COL_SIZE], char player,
                      int & r, int & c);
-bool check_game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c);
+bool game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c);
 
 int main()
 {
@@ -22,8 +22,10 @@ int main()
         ttt[r][c] = player;
         
         // check if game is completed. if so, break
-        bool ended = check_game_ended(ttt, r, c);
-        if (ended) break;
+        if (game_ended(ttt, r, c))
+        {
+            break;
+        }
         
         // toggle player turn
         player = (player == 'X' ? 'O' : 'X');
@@ -32,7 +34,7 @@ int main()
     return 0;
 }
 
-bool check_game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c)
+bool game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c)
 {
     return false;
 }
