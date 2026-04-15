@@ -36,7 +36,76 @@ int main()
 
 bool game_ended(char ttt[ROW_SIZE][COL_SIZE], int r, int c)
 {
-    return false;
+    // check if there's a winning row
+    bool win = true;
+    for (int j = 0; j < COL_SIZE; ++j)
+    {
+        if (ttt[r][j] != ttt[r][c])
+        {
+            win = false;
+            break;
+        }
+    }
+    if (win)
+    {
+        return true;
+    }
+    
+    // check if there's a winning col
+    for (int i = 0; i < ROW_SIZE; ++i)
+    {
+        if (ttt[i][c] != ttt[r][c])
+        {
+            win = false;
+            break;
+        }
+    }
+    if (win)
+    {
+        return true;
+    }
+  
+    //   x
+    //  x
+    // x
+    //
+    //    x
+    //   x
+    //  x
+    // x
+    //
+    // check if there's a winning diag (going up)
+    // check ONLY is move is on this diag.
+    if (r + c == ROW_SIZE)
+    {
+        for (int i = 0; i < ROW_SIZE; ++i)
+        {
+            if (ttt[ROW_SIZE - 1 - i][i] != ttt[r][c])
+            {
+                win = false;
+                break;
+            }
+        }
+        if (win)
+        {
+            return true;
+        }
+    }
+    
+    // check if there's a winning diag (going down)
+    for (int i = 0; i < ROW_SIZE; ++i)
+    {
+        if (ttt[i][i] != ttt[r][c])
+        {
+            win = false;
+            break;
+        }
+    }
+    if (win)
+    {
+        return true;
+    }
+
 }
 
 void get_valid_input(char ttt[ROW_SIZE][COL_SIZE],
@@ -49,10 +118,11 @@ void get_valid_input(char ttt[ROW_SIZE][COL_SIZE],
         std::cout << "Player " << player << "'s turn\n";
         std::cout << "Enter row and column:";
         std::cin >> r >> c;
-        if (0 <= r < ROW_SIZE && 0 <= c < COL_SIZE && ttt[r][c] == ' ')
+        if (0 <= r && r < ROW_SIZE && 0 <= c && c < COL_SIZE && ttt[r][c] == ' ')
         {
             break;
         }
+        std::cout << "Incorrect move\n";
     }
 }
 
