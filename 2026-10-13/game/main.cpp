@@ -29,6 +29,11 @@
  or 
  "you are in the living room. you can go n or w."
  "you have a knife." 
+
+ you can then add more things.
+ also you can have inputs for how to use the things you pick up.
+ the input is only through a character.
+ for instance if you have a pill you can have 'p' to pick up pill and 'q' to eat pill. later you'll learn how to compute with strings then you can handle "pick pill", "pick knive", "eat pill", etc.
  
 */
 int main()
@@ -37,6 +42,7 @@ int main()
     int player_pos = rand() % 3;
     int knive_pos = rand() % 3;
     bool knive_picked = false;
+    char input;
     
     return 0;
 }
