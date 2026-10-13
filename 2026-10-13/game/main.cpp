@@ -3,7 +3,7 @@
 #include <ctime>
 
 /*
-  adventure game
+  adventure game 0.1
   
              living room 0
             / ^            ^ \
