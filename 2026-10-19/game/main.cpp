@@ -26,62 +26,62 @@ int main()
     for (int i = 0; i < 10; ++i)
     {
         std::cout << "time: " << i << '\n';
-        if (player_pos == LIVING_ROOM)
+        switch (player_pos)
         {
-            std::cout << "you are in the living room\n";
-            std::cout << "options: n, w\n";
-            std::cin >> input;
-            if (input == 'n')
+            case LIVING_ROOM:
             {
-                player_pos = LIBRARY;
+                std::cout << "you are in the living room\n";
+                std::cout << "options: n, w\n";
+                std::cin >> input;
+                switch (input)
+                {
+                    case 'n':
+                        player_pos = LIBRARY;
+                        break;
+                    case 'w':
+                        player_pos = BEDROOM;
+                        break;
+                    default:
+                    std::cout << "wrong input!!! you idiot!!!\n";
+                }
+                break;
+            } // LIVING_ROOM
+            case LIBRARY:
+            {
+                std::cout << "you are in the library\n";
+                std::cout << "options: e, w\n";
+                std::cin >> input;
+                switch (input)
+                {
+                    case 'e':
+                        player_pos = LIVING_ROOM;
+                        break;
+                    case 'w':
+                        player_pos = BEDROOM;
+                        break;
+                    default:
+                        std::cout << "wrong input!!! you idiot!!!\n";
+                }
+                break;
             }
-            else if (input == 'w')
+            default:
             {
-                player_pos = BEDROOM;
-            }
-            else
-            {
-                std::cout << "wrong input!!! you idiot!!!\n";
-            }
-        }
-        else if (player_pos == LIBRARY)
-        {
-            std::cout << "you are in the library\n";
-            std::cout << "options: e, w\n";
-            std::cin >> input;
-            if (input == 'e')
-            {
-                player_pos = LIVING_ROOM;
-            }
-            else if (input == 'w')
-            {
-                player_pos = BEDROOM;
-            }
-            else
-            {
-                std::cout << "wrong input!!! you idiot!!!\n";            
-            }
-        }
-        else
-        {
-            std::cout << "you are in the bedroom\n";
-            std::cout << "options: n, s\n";
-            std::cin >> input;
-            if (input == 'n')
-            {
-                player_pos = LIVING_ROOM;
-            }
-            else if (input == 's')
-            {
-                player_pos = LIBRARY;
-            }
-            else
-            {
-                std::cout << "wrong input!!! you idiot!!!\n";
+                std::cout << "you are in the bedroom\n";
+                std::cout << "options: n, s\n";
+                std::cin >> input;
+                switch (input)
+                {
+                    case 'n':
+                        player_pos = LIVING_ROOM;
+                        break;
+                    case 's':
+                        player_pos = LIBRARY;
+                        break;
+                    default:
+                        std::cout << "wrong input!!! you idiot!!!\n";
+                }
             }
         }
     }
-
-
     return 0;
 }
