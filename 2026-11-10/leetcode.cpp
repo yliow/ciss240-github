@@ -19,7 +19,7 @@ public:
             while (x != 0)
             {
                 x /= 10;
-                num_digits += 1;
+                ++num_digits;
             }
             x = t;
 
@@ -31,8 +31,6 @@ public:
             {
                 int left_digit = x / int(pow(10, left)) % 10;
                 int right_digit = x / int(pow(10, right)) % 10;
-                std::cout << left << ' ' << right << ' ' << left_digit << ' ' << right_digit
-                << '\n'; 
                 if (left_digit != right_digit)
                 {
                     is_pal = false;
